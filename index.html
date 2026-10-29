@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b10">
+  <title>FreeWave | Music Distribution</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="logo" href="#">free<span>wave</span> ♪</a>
+      <span class="free-badge">FREE FOR ARTISTS</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">YOUR MUSIC, YOUR RULES</p>
+        <h1>Your music.<br>Your moment.</h1>
+        <p class="hero-text">
+          Upload your tracks, choose your platforms, and schedule
+          your release. Built for independent artists.
+        </p>
+        <div class="hero-stats">
+          <div><strong>0%</strong><span>Artist commission target</span></div>
+          <div><strong>$0</strong><span>Artist subscription target</span></div>
+          <div><strong>24/7</strong><span>Release management</span></div>
+        </div>
+      </section>
+
+      <div class="dashboard">
+        <section class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">NEW RELEASE</p>
+              <h2>Upload your music</h2>
+            </div>
+            <span class="step-badge">01</span>
+          </div>
+
+          <form id="releaseForm">
+            <label class="field">
+              <span>Song title *</span>
+              <input name="title" type="text" maxlength="120"
+                     placeholder="Enter your track title" required>
+            </label>
+
+            <label class="field">
+              <span>Artist name *</span>
+              <input name="artist" type="text" maxlength="120"
+                     placeholder="Your artist name" required>
+            </label>
+
+            <label class="field">
+              <span>Audio file *</span>
+              <div class="upload-box">
+                <div class="upload-icon">♫</div>
+                <strong>Choose your audio</strong>
+                <p>MP3, WAV, FLAC, or another supported audio format</p>
+                <input id="audioFile" name="audio" type="file"
+                       accept="audio/*" required>
+                <span id="audioName" class="file-name">No file selected</span>
+              </div>
+            </label>
+
+            <label class="field">
+              <span>Cover art</span>
+              <input id="coverFile" name="cover" type="file"
+                     accept="image/png,image/jpeg,image/webp">
+              <span id="coverName" class="help-text">Optional JPG, PNG, or WebP</span>
+            </label>
+
+            <label class="field">
+              <span>Release date *</span>
+              <input name="releaseDate" id="releaseDate"
+                     type="datetime-local" required>
+            </label>
+
+            <label class="field">
+              <span>Release time zone</span>
+              <select name="timezone" id="timezone">
+                <option value="Asia/Manila">Philippines · UTC+8</option>
+                <option value="UTC">UTC</option>
+                <option value="America/Los_Angeles">Los Angeles</option>
+                <option value="America/New_York">New York</option>
+                <option value="Europe/London">London</option>
+              </select>
+            </label>
+
+            <div class="field">
+              <span>Distribution platforms *</span>
+              <p class="help-text">Choose where you want your music delivered.</p>
+              <div class="platform-grid">
+                <label class="platform"><input type="checkbox" name="platform" value="Spotify" checked> Spotify</label>
+                <label class="platform"><input type="checkbox" name="platform" value="Apple Music" checked> Apple Music</label>
+                <label class="platform"><input type="checkbox" name="platform" value="YouTube Music" checked> YouTube Music</label>
+                <label class="platform"><input type="checkbox" name="platform" value="Deezer" checked> Deezer</label>
+                <label class="platform"><input type="checkbox" name="platform" value="SoundCloud"> SoundCloud</label>
+                <label class="platform"><input type="checkbox" name="platform" value="Amazon Music" checked> Amazon Music</label>
+                <label class="platform"><input type="checkbox" name="platform" value="TIDAL"> TIDAL</label>
+                <label class="platform"><input type="checkbox" name="platform" value="Other"> Other</label>
+              </div>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" name="rights" required>
+              <span>I own or have permission to distribute this music and artwork.</span>
+            </label>
+
+            <button class="primary-button" type="submit">
+              Save release <span>↗</span>
+            </button>
+
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <aside class="panel releases-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">YOUR MUSIC</p>
+              <h2>Release dashboard</h2>
+            </div>
+            <span id="releaseCount" class="count-badge">0</span>
+          </div>
+
+          <div class="dashboard-banner">
+            <span class="banner-icon">♫</span>
+            <div>
+              <strong>Your next release starts here.</strong>
+              <p>Keep your tracks and planned dates organized.</p>
+            </div>
+          </div>
+
+          <div id="releases" class="release-list">
+            <div class="empty-state">
+              <div class="empty-icon">♫</div>
+              <strong>No releases yet</strong>
+              <p>Your saved tracks will appear here.</p>
+            </div>
+          </div>
+
+          <button id="clearReleases" class="secondary-button" type="button">
+            Clear all releases
+          </button>
+
+          <div class="notice">
+            <strong>Prototype notice</strong>
+            <p>Saved releases are stored in this browser. Actual delivery,
+              background scheduling, and streaming platform approval
+              require a connected backend and distribution provider.</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <a class="logo footer-logo" href="#">free<span>wave</span></a>
+      <p>Independent artists first.</p>
+      <p>Free artist pricing is the goal. Third-party distribution terms apply.</p>
+    </footer>
+  </div>
+</body>
+</html>
